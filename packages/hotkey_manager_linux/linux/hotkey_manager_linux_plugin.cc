@@ -93,6 +93,7 @@ static FlMethodResponse* hkm_register(_HotkeyManagerLinuxPlugin* self,
       std::pair<std::string, std::string>(identifier, keystring));
 
   keybinder_init();
+  keybinder_set_use_cooked_accelerators(false);
   keybinder_bind(keystring, handle_key_down, NULL);
 
   return FL_METHOD_RESPONSE(
